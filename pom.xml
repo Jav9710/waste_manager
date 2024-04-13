@@ -22,6 +22,7 @@
 
     <modules>
         <module>Common</module>
+        <module>WasteManagerAddress</module>
     </modules>
 
 </project>
