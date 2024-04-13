@@ -1,4 +1,4 @@
-package com.example.wastemanageraddressservice.exceptions;
+package com.wastemanager.wastemanageraddressservice.exceptions;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;

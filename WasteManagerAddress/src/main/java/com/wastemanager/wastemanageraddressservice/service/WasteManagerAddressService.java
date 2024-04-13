@@ -1,6 +1,6 @@
-package com.example.wastemanageraddressservice.service;
+package com.wastemanager.wastemanageraddressservice.service;
 
-import com.example.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
+import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
 import org.wastemanager.model.WasteManagerAddressEntity;
 
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.example.wastemanageraddressservice.repository;
+package com.wastemanager.wastemanageraddressservice.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

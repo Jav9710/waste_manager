@@ -1,4 +1,4 @@
-package com.example.wastemanageraddressservice.exceptions;
+package com.wastemanager.wastemanageraddressservice.exceptions;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;

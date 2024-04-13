@@ -1,9 +1,9 @@
-package com.example.wastemanageraddressservice.service;
+package com.wastemanager.wastemanageraddressservice.service;
 
-import com.example.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
-import com.example.wastemanageraddressservice.exceptions.WasteManagerAddressException;
-import com.example.wastemanageraddressservice.mapper.WasteManagerAddressMapper;
-import com.example.wastemanageraddressservice.repository.WasteManagerAddressRepository;
+import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
+import com.wastemanager.wastemanageraddressservice.exceptions.WasteManagerAddressException;
+import com.wastemanager.wastemanageraddressservice.mapper.WasteManagerAddressMapper;
+import com.wastemanager.wastemanageraddressservice.repository.WasteManagerAddressRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.wastemanager.model.WasteManagerAddressEntity;

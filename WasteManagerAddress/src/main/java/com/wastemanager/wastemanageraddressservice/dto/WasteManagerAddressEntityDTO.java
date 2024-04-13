@@ -1,4 +1,4 @@
-package com.example.wastemanageraddressservice.dto;
+package com.wastemanager.wastemanageraddressservice.dto;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

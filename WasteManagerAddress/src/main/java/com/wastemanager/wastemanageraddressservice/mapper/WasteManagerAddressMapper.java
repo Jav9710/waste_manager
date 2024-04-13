@@ -1,11 +1,10 @@
-package com.example.wastemanageraddressservice.mapper;
+package com.wastemanager.wastemanageraddressservice.mapper;
 
-import com.example.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
+import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 import org.wastemanager.model.WasteManagerAddressEntity;
 
-import java.sql.Time;
 import java.util.Date;
 
 @Component

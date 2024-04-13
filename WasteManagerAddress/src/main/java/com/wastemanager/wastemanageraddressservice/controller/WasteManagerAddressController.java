@@ -1,8 +1,8 @@
-package com.example.wastemanageraddressservice.controller;
+package com.wastemanager.wastemanageraddressservice.controller;
 
-import com.example.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
-import com.example.wastemanageraddressservice.service.WasteManagerAddressService;
-import com.example.wastemanageraddressservice.service.WasteManagerAddressServiceImpl;
+import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
+import com.wastemanager.wastemanageraddressservice.service.WasteManagerAddressService;
+import com.wastemanager.wastemanageraddressservice.service.WasteManagerAddressServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.wastemanager.model.WasteManagerAddressEntity;

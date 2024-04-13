@@ -1,4 +1,4 @@
-package com.example.wastemanageraddressservice.config;
+package com.wastemanager.wastemanageraddressservice.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

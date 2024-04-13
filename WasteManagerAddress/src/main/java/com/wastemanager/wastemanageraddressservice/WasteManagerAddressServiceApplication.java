@@ -1,4 +1,4 @@
-package com.example.wastemanageraddressservice;
+package com.wastemanager.wastemanageraddressservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
