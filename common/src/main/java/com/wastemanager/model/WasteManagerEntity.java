@@ -35,7 +35,7 @@ public class WasteManagerEntity {
     private WasteManagerAddressEntity address; // Use a descriptive name
 
     @OneToMany(mappedBy = "wasteManager", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<WasteCenterAuthorizationEntity> listOfWasteCenterAuthorizations = new ArrayList<>(); // Use plural form
+    private List<WasteCenterAuthorizationEntity> listOfWasteCenterAuthorizations = new ArrayList<>();
 
     @Column(name = "is_enabled")
     private Boolean enabled = Boolean.TRUE;

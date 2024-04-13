@@ -7,6 +7,7 @@ import com.wastemanager.wastemanageraddressservice.repository.WasteManagerAddres
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import com.wastemanager.model.WasteManagerAddressEntity;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -22,7 +23,7 @@ public class WasteManagerAddressServiceImpl implements WasteManagerAddressServic
         this.wasteManagerAddressMapper = wasteManagerAddressMapper;
         this.wasteManagerAddressRepository = wasteManagerAddressRepository;
     }
-
+    @Transactional
     public WasteManagerAddressDTO create(WasteManagerAddressDTO dto){
         WasteManagerAddressEntity entity = this.wasteManagerAddressMapper.convertToEntity(dto);
         return this.wasteManagerAddressMapper.convertToDTO(this.wasteManagerAddressRepository.save(entity));
@@ -40,12 +41,12 @@ public class WasteManagerAddressServiceImpl implements WasteManagerAddressServic
         }
         return addresses.stream().map(this.wasteManagerAddressMapper::convertToDTO).toList();
     }
-
+    @Transactional
     public void update(WasteManagerAddressEntity entity) {
         find(entity.getId());
         this.wasteManagerAddressRepository.save(entity);
     }
-
+    @Transactional
     public void delete(Long id){
         find(id);
         this.wasteManagerAddressRepository.deleteById(id);
