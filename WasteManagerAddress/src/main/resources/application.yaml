@@ -1,6 +1,6 @@
 spring:
   application:
-    name: WasteManagerAddressService
+    name: ${APPLICATION_NAME:Address}
   datasource:
     driver-class-name: org.h2.Driver
     url:  "jdbc:h2:mem:wastemanager;DB_CLOSE_ON_EXIT=FALSE"
@@ -19,10 +19,17 @@ spring:
   config:
     activate:
       on-profile: dev
+
 eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://${DISCOVERY_HOST:localhost}:${DISCOVERY_PORT:8761}/eureka/
   instance:
     prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    non-secure-port-enabled: true
+    secure-port-enabled: false
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761/eureka/}
+    register-with-eureka: true
+    fetch-registry: false
+

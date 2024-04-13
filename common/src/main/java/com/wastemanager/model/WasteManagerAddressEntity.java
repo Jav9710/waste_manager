@@ -1,4 +1,4 @@
-package org.wastemanager.model;
+package com.wastemanager.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

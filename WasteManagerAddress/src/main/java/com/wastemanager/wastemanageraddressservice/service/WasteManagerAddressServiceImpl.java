@@ -6,7 +6,7 @@ import com.wastemanager.wastemanageraddressservice.mapper.WasteManagerAddressMap
 import com.wastemanager.wastemanageraddressservice.repository.WasteManagerAddressRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.wastemanager.model.WasteManagerAddressEntity;
+import com.wastemanager.model.WasteManagerAddressEntity;
 
 import java.util.Date;
 import java.util.List;

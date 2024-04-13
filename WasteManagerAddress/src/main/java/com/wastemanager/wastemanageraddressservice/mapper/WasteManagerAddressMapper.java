@@ -3,7 +3,7 @@ package com.wastemanager.wastemanageraddressservice.mapper;
 import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
-import org.wastemanager.model.WasteManagerAddressEntity;
+import com.wastemanager.model.WasteManagerAddressEntity;
 
 import java.util.Date;
 

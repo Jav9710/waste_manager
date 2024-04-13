@@ -5,7 +5,7 @@ import com.wastemanager.wastemanageraddressservice.service.WasteManagerAddressSe
 import com.wastemanager.wastemanageraddressservice.service.WasteManagerAddressServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.wastemanager.model.WasteManagerAddressEntity;
+import com.wastemanager.model.WasteManagerAddressEntity;
 
 import java.util.List;
 

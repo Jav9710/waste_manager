@@ -2,7 +2,7 @@ package com.wastemanager.wastemanageraddressservice.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import org.wastemanager.model.WasteManagerAddressEntity;
+import com.wastemanager.model.WasteManagerAddressEntity;
 
 import java.util.Date;
 import java.util.List;
