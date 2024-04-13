@@ -1,6 +1,6 @@
 package com.wastemanager.wastemanageraddressservice.controller;
 
-import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
+import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressDTO;
 import com.wastemanager.wastemanageraddressservice.service.WasteManagerAddressService;
 import com.wastemanager.wastemanageraddressservice.service.WasteManagerAddressServiceImpl;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ public class WasteManagerAddressController {
     }
 
     @PostMapping
-    public ResponseEntity<WasteManagerAddressEntity> create(@RequestBody WasteManagerAddressEntityDTO dto){
+    public ResponseEntity<WasteManagerAddressDTO> create(@RequestBody WasteManagerAddressDTO dto){
         return ResponseEntity.ok(wasteManagerAddressService.create(dto));
     }
 
@@ -31,12 +31,12 @@ public class WasteManagerAddressController {
     }
 
     @GetMapping
-    public ResponseEntity<List<WasteManagerAddressEntity>> findAll(){
+    public ResponseEntity<List<WasteManagerAddressDTO>> findAll(){
         return ResponseEntity.ok(wasteManagerAddressService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<WasteManagerAddressEntity> find(@PathVariable Long id){
+    public ResponseEntity<WasteManagerAddressDTO> find(@PathVariable Long id){
         return ResponseEntity.ok(wasteManagerAddressService.find(id));
     }
 

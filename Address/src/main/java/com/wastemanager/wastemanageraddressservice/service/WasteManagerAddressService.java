@@ -1,6 +1,6 @@
 package com.wastemanager.wastemanageraddressservice.service;
 
-import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
+import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressDTO;
 import com.wastemanager.model.WasteManagerAddressEntity;
 
 import java.util.Date;
@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface WasteManagerAddressService {
 
-    WasteManagerAddressEntity create(WasteManagerAddressEntityDTO dto);
+    WasteManagerAddressDTO create(WasteManagerAddressDTO dto);
 
-    WasteManagerAddressEntity find(Long id);
+    WasteManagerAddressDTO find(Long id);
 
-    List<WasteManagerAddressEntity> findAll();
+    List<WasteManagerAddressDTO> findAll();
 
     void update(WasteManagerAddressEntity entity);
 

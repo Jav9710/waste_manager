@@ -1,6 +1,6 @@
 package com.wastemanager.wastemanageraddressservice.service;
 
-import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressEntityDTO;
+import com.wastemanager.wastemanageraddressservice.dto.WasteManagerAddressDTO;
 import com.wastemanager.wastemanageraddressservice.exceptions.WasteManagerAddressException;
 import com.wastemanager.wastemanageraddressservice.mapper.WasteManagerAddressMapper;
 import com.wastemanager.wastemanageraddressservice.repository.WasteManagerAddressRepository;
@@ -23,21 +23,22 @@ public class WasteManagerAddressServiceImpl implements WasteManagerAddressServic
         this.wasteManagerAddressRepository = wasteManagerAddressRepository;
     }
 
-    public WasteManagerAddressEntity create(WasteManagerAddressEntityDTO dto){
+    public WasteManagerAddressDTO create(WasteManagerAddressDTO dto){
         WasteManagerAddressEntity entity = this.wasteManagerAddressMapper.convertToEntity(dto);
-        return this.wasteManagerAddressRepository.save(entity);
+        return this.wasteManagerAddressMapper.convertToDTO(this.wasteManagerAddressRepository.save(entity));
     }
 
-    public WasteManagerAddressEntity find(Long id){
-        return this.wasteManagerAddressRepository.findById(id).orElseThrow(() -> new WasteManagerAddressException("No se encontró la dirección con ID: " + id, HttpStatus.NOT_FOUND));
+    public WasteManagerAddressDTO find(Long id){
+        return this.wasteManagerAddressMapper.convertToDTO(
+                this.wasteManagerAddressRepository.findById(id).orElseThrow(() -> new WasteManagerAddressException("No se encontró la dirección con ID: " + id, HttpStatus.NOT_FOUND)));
     }
 
-    public List<WasteManagerAddressEntity> findAll(){
+    public List<WasteManagerAddressDTO> findAll(){
         List<WasteManagerAddressEntity> addresses = this.wasteManagerAddressRepository.findAll();
         if (addresses.isEmpty()) {
             throw new WasteManagerAddressException("No se encontraron direcciones.", HttpStatus.NOT_FOUND);
         }
-        return addresses;
+        return addresses.stream().map(this.wasteManagerAddressMapper::convertToDTO).toList();
     }
 
     public void update(WasteManagerAddressEntity entity) {
