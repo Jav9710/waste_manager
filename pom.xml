@@ -23,6 +23,7 @@
     <modules>
         <module>Common</module>
         <module>WasteManagerAddress</module>
+        <module>Discovery</module>
     </modules>
 
 </project>
