@@ -25,6 +25,7 @@
         <module>Common</module>
         <module>WasteManagerAddress</module>
         <module>Discovery</module>
+        <module>Gateway</module>
     </modules>
 
     <dependencyManagement>
