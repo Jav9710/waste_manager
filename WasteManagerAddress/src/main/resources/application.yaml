@@ -19,7 +19,6 @@ spring:
   config:
     activate:
       on-profile: dev
-
 eureka:
   instance:
     prefer-ip-address: true
@@ -32,4 +31,5 @@ eureka:
       defaultZone: ${DISCOVERY_URL:http://localhost:8761/eureka/}
     register-with-eureka: true
     fetch-registry: false
-
+server:
+  port: ${APPLICATION_PORT:8081}
