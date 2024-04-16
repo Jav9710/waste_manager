@@ -1,0 +1,49 @@
+---
+spring:
+  application:
+    name: ${APPLICATION_NAME:manager}
+  config:
+    import: "configserver:${CONFIG_URL:http://localhost:8084}"
+    activate:
+      on-profile: dev
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  cloud:
+    config:
+      enabled: false
+  application:
+    name: ${APPLICATION_NAME:address}
+  datasource:
+    driver-class-name: org.h2.Driver
+    url:  ${CONNECTION_STRING:jdbc:h2:mem:wastemanager;DB_CLOSE_ON_EXIT=FALSE}
+    username: ${DB_USER:sa}
+    password: ${DB_PASS:sa}
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+server:
+  port: ${APPLICATION_PORT:8081}
+address:
+  name: ${WASTE_ADDRESS_SERVICE_NAME:address}
+manager:
+  center:
+    kind: ${CENTER_AUTHORIZATION_KIND:WasteCenterAuthorization}
+  manager:
+    kind: ${MANAGER_KIND:WasteManager}
+discovery:
+  gateway: ${GATEWAY_SERVICE:GATEWAY}
+springdoc:
+  version: 2.5.0
+logging:
+  level:
+    web: debug

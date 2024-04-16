@@ -31,10 +31,23 @@ public class WasteManagerAddressEntity {
     @Version
     private Long version = 0L;
 
-    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(updatable = false)
     private Date createdDate;
 
-    @LastModifiedDate
+    @Temporal(TemporalType.TIMESTAMP)
     private Date lastModifiedDate;
+
+    @PrePersist
+    protected void onCreate() {
+        Date date = new Date();
+        createdDate = date;
+        lastModifiedDate = date;
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        lastModifiedDate = new Date();
+    }
 }
 

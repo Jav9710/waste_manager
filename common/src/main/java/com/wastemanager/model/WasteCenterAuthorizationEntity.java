@@ -1,11 +1,13 @@
 package com.wastemanager.model;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,11 +22,12 @@ public class WasteCenterAuthorizationEntity {
     private Long id;
 
     @Column(nullable = false)
-    private String authorizationNumber; // Use descriptive name
+    private String authorizationNumber;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @ManyToOne
     @JoinColumn(name = "waste_manager_id")
-    private WasteManagerEntity wasteManager; // Use singular form
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private WasteManagerEntity wasteManager;
 
-    // Getters, Setters, and other methods
 }

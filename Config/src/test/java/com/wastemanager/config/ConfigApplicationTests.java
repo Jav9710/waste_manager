@@ -1,12 +1,12 @@
-package com.wastemanager.discovery;
+package com.wastemanager.config;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-@ActiveProfiles("dev")
-class DiscoveryApplicationTests {
+@ActiveProfiles(profiles = {"dev", "native"})
+class ConfigApplicationTests {
 
     @Test
     void contextLoads() {

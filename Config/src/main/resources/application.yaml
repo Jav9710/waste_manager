@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: ${APPLICATION_NAME:config}
+  config:
+    activate:
+      on-profile: dev
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file://${LOCAL_REPO_PATH:/C:/Users/user/Documents/config}
+#        git:
+#          uri: file://${GIT_LOCAL_REPO_PATH:C:/Users/user/Documents/config}
+eureka:
+  instance:
+    prefer-ip-address: true
+    non-secure-port-enabled: true
+    secure-port-enabled: false
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761/eureka/}
+    register-with-eureka: true
+    fetch-registry: false
+server:
+  port: ${APPLICATION_PORT:8084}

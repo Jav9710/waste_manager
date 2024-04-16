@@ -1,5 +1,6 @@
 package com.wastemanager.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,11 +31,12 @@ public class WasteManagerEntity {
     @Column(nullable = false, unique = true)
     private String nif;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "waste_manager_address_id")
-    private WasteManagerAddressEntity address; // Use a descriptive name
+    private WasteManagerAddressEntity address;
 
-    @OneToMany(mappedBy = "wasteManager", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    @OneToMany(mappedBy = "wasteManager")
     private List<WasteCenterAuthorizationEntity> listOfWasteCenterAuthorizations = new ArrayList<>();
 
     @Column(name = "is_enabled")
@@ -44,8 +46,23 @@ public class WasteManagerEntity {
     private Long version = 0L;
 
     @CreationTimestamp
+    @Column(updatable = false)
     private Date createdDate;
+
+
 
     @LastModifiedDate
     private Date lastModifiedDate;
+
+    @PrePersist
+    protected void onCreate() {
+        Date date = new Date();
+        createdDate = date;
+        lastModifiedDate = date;
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        lastModifiedDate = new Date();
+    }
 }

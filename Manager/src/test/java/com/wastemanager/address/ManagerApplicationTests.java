@@ -1,12 +1,12 @@
-package com.wastemanager.discovery;
+package com.wastemanager.address;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-@ActiveProfiles("dev")
-class DiscoveryApplicationTests {
+@ActiveProfiles("test")
+class ManagerApplicationTests {
 
     @Test
     void contextLoads() {
