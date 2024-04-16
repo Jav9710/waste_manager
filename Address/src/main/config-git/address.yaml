@@ -1,16 +1,7 @@
----
 spring:
-  application:
-    name: ${APPLICATION_NAME:address}
   config:
-    import: "configserver:${CONFIG_URL:http://localhost:8084}"
     activate:
       on-profile: dev
----
-spring:
-  config:
-    activate:
-      on-profile: test
   application:
     name: ${APPLICATION_NAME:address}
   datasource:
@@ -28,18 +19,21 @@ spring:
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: create-drop
-  cloud:
-    config:
-      enabled: false
+eureka:
+  instance:
+    prefer-ip-address: true
+    non-secure-port-enabled: true
+    secure-port-enabled: false
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761/eureka/}
+    register-with-eureka: true
+    fetch-registry: false
 address:
   kind: ${ENTITY_KIND:WasteManagerAddressEntity}
 springdoc:
   version: 2.5.0
 server:
   port: ${APPLICATION_PORT:8082}
-eureka:
-  client:
-    enabled: false
-logging:
-  level:
-    web: debug
