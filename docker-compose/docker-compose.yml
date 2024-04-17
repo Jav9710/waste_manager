@@ -19,7 +19,7 @@ services:
       LOCAL_REPO_PATH: "/home/config"
       DISCOVERY_URL: "http://discovery:8761/eureka"
     volumes:
-      - ./config:/home/config
+      - ./configs:/home/config
     depends_on:
       - discovery
     ports:
