@@ -40,10 +40,7 @@ manager:
     kind: ${CENTER_AUTHORIZATION_KIND:WasteCenterAuthorization}
   manager:
     kind: ${MANAGER_KIND:WasteManager}
-discovery:
-  gateway: ${GATEWAY_SERVICE:GATEWAY}
-springdoc:
-  version: 2.5.0
 logging:
   level:
     web: debug
+

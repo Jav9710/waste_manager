@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class OpenApi {
 
     @Bean
-    public OpenAPI customOpenAPI(@Value("${springdoc.version}") String appVersion) {
+    public OpenAPI customOpenAPI(@Value("2.5.0") String appVersion) {
         return new OpenAPI().info(new Info()
                 .title("WastaManagerAddress API")
                 .version(appVersion)

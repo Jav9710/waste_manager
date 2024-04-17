@@ -8,9 +8,9 @@
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>Gateway</artifactId>
-    <name>Gateway</name>
-    <description>Gateway</description>
+    <artifactId>gateway</artifactId>
+    <name>gateway</name>
+    <description>gateway</description>
     <properties>
         <java.version>17</java.version>
     </properties>
