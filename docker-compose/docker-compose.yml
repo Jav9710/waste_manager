@@ -27,25 +27,26 @@ services:
 
   gateway:
     image: wastemanager.registry.azure.io/microservice/gateway:latest
+    restart: always
     networks:
       - my-app-net
     environment:
       DISCOVERY_URL: "http://discovery:8761/eureka"
       CONFIG_URL: "http://config:8084/"
-    command: ["while true; do curl -s -o /dev/null -w http://config:8084/actuator/health"]
     ports:
       - "8080:8080"
     depends_on:
       - config
 
+
   address:
     image: wastemanager.registry.azure.io/microservice/address:latest
+    restart: always
     networks:
       - my-app-net
     environment:
       DISCOVERY_URL: "http://discovery:8761/eureka"
       CONFIG_URL: "http://config:8084/"
-    command: ["./wait-for-it.sh config:8084"]
     ports:
       - "8082:8082"
     depends_on:
@@ -53,12 +54,12 @@ services:
 
   manager:
     image: wastemanager.registry.azure.io/microservice/manager:latest
+    restart: always
     networks:
       - my-app-net
     environment:
       DISCOVERY_URL: "http://discovery:8761/eureka"
       CONFIG_URL: "http://config:8084/"
-    command: ["./wait-for-it.sh config:8084"]
     ports:
       - "8081:8081"
     depends_on:

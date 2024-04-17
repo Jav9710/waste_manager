@@ -58,3 +58,8 @@ spring:
     import: "configserver:${CONFIG_URL:http://localhost:8084}"
     activate:
       on-profile: dev
+  cloud:
+    config:
+      retry:
+        initial-interval: 10000
+        max-attempts: 10
